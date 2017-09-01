@@ -6,9 +6,9 @@ RUN apt-get update \
     && mkdir -p /var/log/supervisor
 
 WORKDIR /opt/backbeat
-RUN git clone https://github.com/scality/backbeat
+RUN git clone https://github.com/Netsrfr/backbeat.git
 WORKDIR /opt/backbeat/backbeat
-RUN npm install
+RUN git checkout wip/post_processing && npm install
 
 COPY config.json /opt/backbeat/backbeat/conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
