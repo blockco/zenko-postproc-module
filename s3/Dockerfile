@@ -1,5 +1,5 @@
 FROM node:6
-MAINTAINER Vianney Rancurel <vr@scality.com>
+MAINTAINER Justin Pfefferle <jpfeffer@student.42.us.org>
 
 WORKDIR /opt/s3
 

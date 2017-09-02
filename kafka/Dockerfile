@@ -1,5 +1,5 @@
 FROM java:openjdk-8-jre
-MAINTAINER Vianney Rancurel <vr@scality.com>
+MAINTAINER Justin Pfefferle <jpfeffer@student.42.us.org>
 
 ENV KAFKA_VERSION="0.10.2.1"
 ENV SCALA_VERSION="2.12"
@@ -17,7 +17,7 @@ RUN apt-get update \
 
 WORKDIR ${KAFKA_DIR}
 
-COPY server.properties.backbeat ${KAFKA_DIR}/config
+COPY server.properties.postproc ${KAFKA_DIR}/config
 COPY zookeeper.properties.backbeat ${KAFKA_DIR}/config
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
