@@ -4,7 +4,7 @@ version: "3.1"
 
 services:
   backbeat:
-   image: netsrfr/backbeat
+   image: netsrfr/backbeat:latest
    networks:
       - backend
    environment:
@@ -12,7 +12,7 @@ services:
    command: /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
 
   kafka:
-    image: netsrfr/kafka
+    image: netsrfr/kafka:latest
     ports:
       - "2181"
       - "9092"
@@ -29,7 +29,7 @@ services:
           - node.labels.io.zenko.type == storage
 
   s3-data:
-    image: netsrfr/s3
+    image: netsrfr/s3:latest
     ports:
       - "9991"
     networks:

@@ -6,7 +6,7 @@
         "hosts": "kafka:9093"
     },
     "extensions": {
-        "post-processing": {
+        "replication": {
             "source": {
                 "transport": "http",
                 "s3": {
