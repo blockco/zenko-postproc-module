@@ -14,13 +14,14 @@ $ docker-machine create s3server
 Initialize docker swarm and add second node as a worker
 ###### From Default
 ```
-$ docker swarm init
+$ docker swarm init --advertise-addr $(docker-machine ip default)
 ```
 
 ###### From s3server
 Copy and run join command/token from previous command
 
-Assign label for storage to persist on a single node
+Assign label for storage to persist on a single node  
+Show nodes: *docker node ls*
 
 ```
 $ docker node update --label-add io.zenko.type/storage <NODE_ID>
@@ -46,7 +47,7 @@ Run bash on the kafka container
 $ docker exec -it <container_id> bash
 ```
 
-Create the processing-populator node and logOffset namespace
+Create the 'postproc' namespace and 'processing-populator' node
 
 ```
 bin/zookeeper-shell.sh localhost:2181/postproc
