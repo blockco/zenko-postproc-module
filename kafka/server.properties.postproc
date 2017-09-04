@@ -3,7 +3,7 @@
 ############################# Server Basics #############################
 
 # The id of the broker. This must be set to a unique integer for each broker.
-broker.id=0
+broker.id=1
 
 # Switch to enable topic deletion or not, default value is false
 #delete.topic.enable=true
@@ -16,7 +16,7 @@ broker.id=0
 #     listeners = listener_name://host_name:port
 #   EXAMPLE:
 #     listeners = PLAINTEXT://your.host.name:9092
-#listeners=PLAINTEXT://:9092
+listeners=PLAINTEXT://:9093
 
 # Hostname and port the broker will advertise to producers and consumers. If not set, 
 # it uses the value for "listeners" if configured.  Otherwise, it will use the value
@@ -45,7 +45,7 @@ socket.request.max.bytes=104857600
 ############################# Log Basics #############################
 
 # A comma seperated list of directories under which to store log files
-log.dirs=/data/kafka-logs
+log.dirs=/data/kafka-logs-1
 
 # The default number of log partitions per topic. More partitions allow greater
 # parallelism for consumption, but this will also result in more files across
@@ -101,7 +101,7 @@ log.retention.check.interval.ms=300000
 # server. e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002".
 # You can also append an optional chroot string to the urls to specify the
 # root directory for all kafka znodes.
-zookeeper.connect=localhost:2181/postproc
+zookeeper.connect=localhost:2181/backbeat
 
 # Timeout in ms for connecting to zookeeper
 zookeeper.connection.timeout.ms=6000

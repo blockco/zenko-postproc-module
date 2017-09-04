@@ -1,9 +1,9 @@
 {
     "zookeeper": {
-        "connectionString": "kafka:2181/postproc"
+        "connectionString": "kafka:2181/backbeat"
     },
     "kafka": {
-        "hosts": "kafka:9092"
+        "hosts": "kafka:9093"
     },
     "extensions": {
         "post-processing": {
