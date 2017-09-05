@@ -3,6 +3,14 @@
 version: "3.1"
 
 services:
+  post_processing:
+    image: netsrfr/post_processing_consumer:latest
+    networks:
+       - backend
+    environment:
+      FOO: bar
+    command: /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
+
   backbeat:
    image: netsrfr/backbeat:latest
    networks:
