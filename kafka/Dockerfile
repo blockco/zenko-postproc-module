@@ -24,6 +24,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 VOLUME ["/data"]
 
 # 2181 is zookeeper, 9092 is kafka
-EXPOSE 2181 9092
+EXPOSE 2181 9092 9093
 
 CMD supervisord -c /etc/supervisor/supervisord.conf -n

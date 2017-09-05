@@ -24,7 +24,7 @@ Assign label for storage to persist on a single node
 Show nodes: *docker node ls*
 
 ```
-$ docker node update --label-add io.zenko.type/storage <NODE_ID>
+$ docker node update --label-add io.zenko.type=storage <NODE_ID>
 ```
 
 Verify label was applied to node
@@ -52,9 +52,6 @@ Create the 'postproc' namespace and 'processing-populator' node
 ```
 bin/zookeeper-shell.sh localhost:2181/postproc
 create /processing-populator my_data
-create /processing-populator logState
-create /processing-populator/logState bucketFile_s3-recordlog
-create /processing-populator/logState/bucketFile_s3-recordlog logOffset
 quit
 ```
 
@@ -66,3 +63,5 @@ bin/kafka-topics.sh --create \
 --partitions 1 \
 --topic post-processing
 ```
+
+NOTE: Versioning must be enabled on bucket

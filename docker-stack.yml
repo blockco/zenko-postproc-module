@@ -16,6 +16,7 @@ services:
     ports:
       - "2181"
       - "9092"
+      - "9093"
     networks:
       - backend
     environment:
