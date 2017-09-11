@@ -9,7 +9,7 @@ services:
        - backend
     environment:
       FOO: bar
-    command: /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
+    command: npm --prefix /opt/post_processing/consumer run pp_consumer
 
   backbeat:
    image: netsrfr/backbeat:latest
